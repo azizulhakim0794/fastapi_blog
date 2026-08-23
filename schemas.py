@@ -7,11 +7,12 @@ class PostBase(BaseModel):
     author: str = Field(min_length=1, max_length=50)
 
 
-class PostCreate(BaseModel):
+class PostCreate(PostBase):
     pass
 
 
 class PostResponse(PostBase):
     model_config = ConfigDict(from_attributes=True)
+
     id: int
     date_posted: str

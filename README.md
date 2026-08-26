@@ -14,3 +14,7 @@ uv add aiosqlite
 
 and also need to install the 
 uv add greenlet
+#### for authentication need to install 2 pakages which is 
+uv add "pwdlib[argon2]"
+uv add pyjwt
+uv add pydantic-settings

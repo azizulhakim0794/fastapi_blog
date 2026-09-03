@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from typing import Annotated
 
-from fastapi import Depends, FastAPI, HTTPException, Request, status
+from fastapi import Depends, FastAPI, HTTPException, Request, status, UploadFile
 from fastapi.exception_handlers import (
     http_exception_handler,
     request_validation_exception_handler,
@@ -13,6 +13,12 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 from starlette.exceptions import HTTPException as StarletteHTTPException
+
+from PIL import UnidentifiedImageError
+
+from starlette.concurrency import run_in_threadpool
+
+from image_utils import delete_profile_image, process_profile_image
 
 import models
 from database import Base, engine, get_db

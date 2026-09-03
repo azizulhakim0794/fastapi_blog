@@ -18,3 +18,11 @@ uv add greenlet
 uv add "pwdlib[argon2]"
 uv add pyjwt
 uv add pydantic-settings
+
+#### for file upload need to install the pillow pagkages
+uv add pillow
+
+
+# questions 
+1. what is CPU bounds works (file upload in python)
+2. where i store my image or other upladed documents.

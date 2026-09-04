@@ -22,8 +22,12 @@ uv add pydantic-settings
 #### for file upload need to install the pillow pagkages
 uv add pillow
 
+#### for password validations need to install this 
+uv add aiosmtplib
+
 
 # questions 
 1. what is CPU bounds works (file upload in python)
 2. where i store my image or other upladed documents.
 3. please also check the fastapi pagination library
+4. what is smtp server to send the email (send gred or AWS)

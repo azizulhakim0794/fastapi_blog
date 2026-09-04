@@ -7,6 +7,7 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
     )
+
     secret_key: SecretStr
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
@@ -14,5 +15,18 @@ class Settings(BaseSettings):
 
     posts_per_page: int = 10
 
+    reset_token_expire_minutes: int = 60
 
-settings = Settings()  # this is loaded from the .env files
+    mail_server: str = "localhost"
+    mail_port: int = 587
+    mail_username: str = ""
+    mail_password: SecretStr = SecretStr("")
+
+    # Fixed "main" → "mail"
+    mail_from: str = "noreply@fastapiblog.com"
+    mail_use_tls: bool = True
+
+    frontend_url: str = "http://localhost:8000"
+
+
+settings = Settings()
